@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Search for an appointment</h1>
+<form action="/view_appointments">
+    <label for="date">Date</label>
+    <input type="date" name="date" id="date" />
+    <label for="time">Start Time</label>
+    <input type="time" name="start_time" id="start_time" step="1800"/>
+    <label for="time">End Time</label>
+    <input type="time" name="end_time" id="end_time" step="1800"/>
+    <input type="submit" />
+</form>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Choose an appointment:</h1>
+<ul>
+    {% for res in reservations %}
+        <li>
+            {{res}} 
+            <form method="POST" action="/book_appointment" style="display:inline">
+                <input type="hidden" name="date" value="{{res}}" />
+                <input type="submit">
+            </form>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}

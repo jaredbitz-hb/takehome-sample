@@ -1,0 +1,1 @@
+export POSTGRES_DB="melon_scheduler"
