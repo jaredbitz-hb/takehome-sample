@@ -28,8 +28,9 @@ class Reservation(db.Model):
 
 def connect_to_db(app):
     with app.app_context():
-        POSTGRES_DB = os.environ["POSTGRES_DB"]
-        app.config['SQLALCHEMY_DATABASE_URI'] = f'postgresql:///{POSTGRES_DB}'
+        POSTGRES_DB_URL = os.environ["POSTGRES_DB_URL"]
+        
+        app.config['SQLALCHEMY_DATABASE_URI'] = POSTGRES_DB_URL
         app.config['SQLALCHEMY_ECHO'] = False
         app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
